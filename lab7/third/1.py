@@ -11,9 +11,9 @@ PURPLE = (106, 90, 205)
 GRAY = (128, 128, 128)
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-background_image = pygame.image.load("images/bg.png")
+background_image = pygame.image.load("bg.png")
 background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
-text_backgroung = pygame.image.load("images/frame.png")
+text_backgroung = pygame.image.load("frame.png")
 
 
 FPS = 60
@@ -30,9 +30,9 @@ for song in songs:
     s_n.append(song_name)
 
 music_icons = []
-icons = os.listdir("images/forsong")
+icons = os.listdir("forsong.png")
 for icon in icons:
-    music_icons.append(os.path.join("images/forsong", icon))
+    music_icons.append(os.path.join("forsong.png", icon))
 
 current_song_index = 0
 current_icon_index = 0
@@ -54,10 +54,10 @@ current_song_title = font.render(s_n[current_song_index], True, (255, 255, 255))
 
 button_size = (SCREEN_WIDTH // text_height, SCREEN_HEIGHT // text_height)
 D = button_size[0]
-next_button_rect = pygame.image.load("images/chh.png")
+next_button_rect = pygame.image.load("chh.png")
 
-pause_button_rect = pygame.image.load("images/pause.png")
-prev_button_rect = pygame.image.load("images/chh.png")
+pause_button_rect = pygame.image.load("pause.png")
+prev_button_rect = pygame.image.load("chh.png")
 prev_button_rect = pygame.transform.rotate(prev_button_rect, 180)
 next_button_rect = pygame.transform.scale(next_button_rect, button_size)
 pause_button_rect = pygame.transform.scale(pause_button_rect, button_size)
@@ -77,7 +77,7 @@ text_backgroung = pygame.transform.scale(text_backgroung, (SCREEN_WIDTH,  (SCREE
 current_icon_rect = current_icon.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT - icon_size[1]))
 icon_pos = current_icon_rect
 
-frame = pygame.image.load("images/frame.png")
+frame = pygame.image.load("frame.png")
 frame_size = (icon_size[0] + (20*scale_factor), icon_size[1] + (20*scale_factor))
 frame = pygame.transform.scale(frame, frame_size)
 while running: 
